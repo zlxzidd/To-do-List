@@ -1,6 +1,19 @@
 <%- include("header") -%>
     <div class="box" id="heading">
-        <h1> <%= listTitle%> </h1></br>
+        <h1> <%= listTitle%> </h1>
+        <h2 class="currentD"><span id="datetime"></span></h2>
+
+        <script>
+        
+        var dt = new Date();
+        document.getElementById("datetime").innerHTML =(dt.getDay(convertDay)) +" " +(("0"+dt.getDate()).slice(-2)) +"."+ (("0"+(dt.getMonth()+1)).slice(-2)) +"."+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
+        var getDay= new convertDay();
+        function dayOfWeekAsInteger(convertDay) {
+  return ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"].indexOf(getDay);
+};
+        </script>
+
+
         </div> 
 
         <div class="box">
@@ -31,7 +44,7 @@
     </div>
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
-          <h1 class="display-4">Technologies</h1>
+          <h1 class="display-4"></h1>
           <img  src="/public/images/javascript.svg" alt="" srcset="javascript">
           <p class="lead"></p>
         </div>
